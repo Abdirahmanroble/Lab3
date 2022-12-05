@@ -45,3 +45,11 @@ insert into sibling (person_id, student_id) values (44, 42);
 insert into sibling (person_id, student_id) values (44, 43);
 
 
+insert into sibling (person_id, student_id) values (51, 52);
+insert into sibling (person_id, student_id) values (51, 53);
+
+insert into sibling (person_id, student_id) values (52, 51);
+insert into sibling (person_id, student_id) values (52, 53);
+
+insert into sibling (person_id, student_id) values (53, 51);
+insert into sibling (person_id, student_id) values (53, 52);

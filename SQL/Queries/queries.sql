@@ -1,12 +1,45 @@
-SELECT
+-- all lessons taken in 2022
+  SELECT
     EXTRACT(month FROM start_time) AS month,
     count(*) FROM lesson WHERE EXTRACT(YEAR FROM start_time) = '2022' GROUP BY EXTRACT(month FROM start_time)
     ORDER BY EXTRACT(month FROM start_time) ASC;
 
+-- all private lessons taken in 2022
+SELECT
+    EXTRACT(month FROM start_time) AS month,
+    count(*) FROM lesson 
+	RIGHT JOIN private_lesson ON  lesson.id = private_lesson.lesson_id 
+    WHERE EXTRACT(YEAR FROM start_time) = '2022' GROUP BY EXTRACT(month FROM start_time)
+    ORDER BY EXTRACT(month FROM start_time) ASC;
 
-SELECT EXTRACT(month FROM start_time) as month, count(*) t.premiered
-FROM titles AS t
-INNER JOIN crew AS c ON t.title_id=c.title_id
-INNER JOIN people AS p ON c.person_id=p.person_id
-WHERE t.type='movie' AND p.name='Samuel L. Jackson' AND c.category='actor'
-ORDER BY t.premiered DESC;
+
+-- all group lessons taken in 2022
+SELECT
+    EXTRACT(month FROM start_time) AS month,
+    count(*) FROM lesson 
+	RIGHT JOIN group_lesson ON  lesson.id = group_lesson.lesson_id 
+    WHERE EXTRACT(YEAR FROM start_time) = '2022' GROUP BY EXTRACT(month FROM start_time)
+    ORDER BY EXTRACT(month FROM start_time) ASC;
+
+
+
+-- all ensembles taken in 2022
+SELECT
+    EXTRACT(month FROM start_time) AS month,
+    count(*) FROM lesson 
+	RIGHT JOIN ensembles ON  lesson.id = ensembles.lesson_id 
+    WHERE EXTRACT(YEAR FROM start_time) = '2022' GROUP BY EXTRACT(month FROM start_time)
+    ORDER BY EXTRACT(month FROM start_time) ASC;
+
+
+
+-- siblings
+
+   SELECT student.person_id, COUNT(CASE WHEN sibling.student_id IS NOT NULL THEN 'has_sibling' END) AS number_of_siblings from student LEFT JOIN sibling ON student.person_id = sibling.student_id GROUP BY student.person_id ORDER BY student.person_id;
+
+
+
+ -- instructor lessons
+
+  SELECT instructor_person_id, count(*) FROM lesson WHERE EXTRACT(YEAR FROM start_time) = '2022' AND EXTRACT(MONTH FROM start_time) = '12' GROUP BY instructor_person_id HAVING COUNT(*) > 0
+    ORDER BY count(*) DESC;
