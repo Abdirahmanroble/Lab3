@@ -1,0 +1,12 @@
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (84, 'guitar', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (85, 'trump', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (86, 'piano', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (87, 'guitar', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (88, 'trump', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (89, 'guitar', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (90, 'piano', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (91, 'trump', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (91, 'piano', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (93, 'guitar', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (94, 'piano', 5);
+insert into group_lesson (lesson_id, instrument_type, min_of_students) values (95, 'trump', 5);

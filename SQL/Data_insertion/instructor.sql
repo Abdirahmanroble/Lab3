@@ -1,0 +1,10 @@
+insert into instructor (person_id, is_available) values (1, 'no');
+insert into instructor (person_id, is_available) values (2, 'yes');
+insert into instructor (person_id, is_available) values (3, 'no');
+insert into instructor (person_id, is_available) values (4, 'no');
+insert into instructor (person_id, is_available) values (5, 'no');
+insert into instructor (person_id, is_available) values (6, 'yes');
+insert into instructor (person_id, is_available) values (7, 'yes');
+insert into instructor (person_id, is_available) values (8, 'no');
+insert into instructor (person_id, is_available) values (9, 'no');
+insert into instructor (person_id, is_available) values (10, 'yes');
