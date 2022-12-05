@@ -72,10 +72,8 @@ CREATE TABLE type_of_instruments (
 CREATE TABLE lesson (
  id BIGSERIAL NOT NULL PRIMARY KEY,
  start_time TIMESTAMP(6),
- end_time TIMESTAMP(6),
  price_category_id BIGINT NOT NULL REFERENCES price_category(id) ,
  instructor_person_id BIGINT NOT NULL REFERENCES instructor (person_id),
- student_person_id BIGINT NOT NULL REFERENCES student (person_id),
  room_id BIGINT NOT NULL REFERENCES classroom(room_id),
  skill_level VARCHAR(100)
 );
