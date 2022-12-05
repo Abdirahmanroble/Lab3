@@ -45,18 +45,18 @@ SELECT
     ORDER BY count(*) DESC;
 
 -- Show all ensembles in next week
-SELECT lesson_id, to_char(start_time, 'Day') as weekday, genre, start_time,
-CASE 
-WHEN  (max_of_students - 10) = 0 
-THEN 'full boked'
+   SELECT lesson_id, to_char(start_time, 'Day') as weekday, genre, start_time,
+   CASE 
+    WHEN  (max_of_students - 10) = 0 
+    THEN 'full boked'
 
-WHEN  (max_of_students - 9) = 1 or (max_seats - boked) = 2 
-THEN '1-2 seats left!'
+    WHEN  (max_of_students - 9) = 1 or (max_seats - boked) = 2 
+    THEN '1-2 seats left!'
 
-WHEN  (max_of_students - 7) > 2
-THEN 'Seats left'
+    WHEN  (max_of_students - 7) > 2
+    THEN 'Seats left'
 
-END
+     END
     FROM lesson RIGHT JOIN ensembles ON lesson.id = ensembles.lesson_id 
     WHERE date_trunc('week', start_time) = date_trunc('week', now()) + interval '1 week' ORDER BY genre, weekday;
 

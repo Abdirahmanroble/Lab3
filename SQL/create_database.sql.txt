@@ -1,2 +1,2 @@
-CREATE DATABASE music_schooldb;
-\c music_schooldb;
+CREATE DATABASE sound_good_db;
+\c sound_good_db;
