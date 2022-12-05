@@ -58,7 +58,7 @@ CREATE TABLE instructor (
 CREATE TABLE student ( 
  student_id BIGSERIAL NOT NULL,
  person_id BIGINT NOT NULL REFERENCES person (id),
- PRIMARY KEY(person_iselec)
+ PRIMARY KEY(person_id)
 );
 
 
